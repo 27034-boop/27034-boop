@@ -1,166 +1,177 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Law for AI</title>
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Law for AI</title>
 
-    body {
-      font-family: Arial, sans-serif;
-      line-height: 1.6;
-      background: #f7f9fc;
-      color: #1f2937;
-    }
+<style>
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  background: #0f172a;
+  color: #e5e7eb;
+}
 
-    header {
-      background: linear-gradient(135deg, #0f172a, #1d4ed8);
-      color: white;
-      padding: 80px 20px;
-      text-align: center;
-    }
+header {
+  text-align: center;
+  padding: 100px 20px;
+  background: linear-gradient(135deg, #020617, #1e3a8a);
+}
 
-    header h1 {
-      font-size: 3rem;
-      margin-bottom: 15px;
-    }
+h1 {
+  font-size: 3rem;
+}
 
-    header p {
-      font-size: 1.2rem;
-      max-width: 700px;
-      margin: 0 auto 25px;
-    }
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
 
-    .btn {
-      display: inline-block;
-      background: white;
-      color: #1d4ed8;
-      padding: 12px 24px;
-      text-decoration: none;
-      border-radius: 8px;
-      font-weight: bold;
-    }
+section {
+  padding: 60px 20px;
+  max-width: 1100px;
+  margin: auto;
+}
 
-    nav {
-      background: #111827;
-      padding: 15px;
-      text-align: center;
-    }
+.btn {
+  display: inline-block;
+  background: gold;
+  color: black;
+  padding: 12px 25px;
+  border-radius: 8px;
+  text-decoration: none;
+  margin-top: 20px;
+  font-weight: bold;
+}
 
-    nav a {
-      color: white;
-      text-decoration: none;
-      margin: 0 15px;
-      font-weight: bold;
-    }
+nav {
+  text-align: center;
+  padding: 15px;
+  background: #020617;
+}
 
-    section {
-      max-width: 1100px;
-      margin: auto;
-      padding: 60px 20px;
-    }
+nav a {
+  margin: 0 15px;
+  color: white;
+  text-decoration: none;
+}
 
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 20px;
-      margin-top: 30px;
-    }
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+  gap: 20px;
+}
 
-    .card {
-      background: white;
-      padding: 25px;
-      border-radius: 12px;
-      box-shadow: 0 4px 14px rgba(0,0,0,0.08);
-    }
+.card {
+  background: #111827;
+  padding: 25px;
+  border-radius: 10px;
+}
 
-    .card h3 {
-      margin-bottom: 12px;
-      color: #1d4ed8;
-    }
+.highlight {
+  color: gold;
+}
 
-    .about, .contact {
-      background: white;
-      border-radius: 12px;
-      padding: 30px;
-      box-shadow: 0 4px 14px rgba(0,0,0,0.08);
-    }
+/* Testimonials */
+.testimonial {
+  background: #1f2937;
+  padding: 20px;
+  border-left: 4px solid gold;
+  margin-bottom: 20px;
+}
 
-    footer {
-      background: #0f172a;
-      color: white;
-      text-align: center;
-      padding: 25px 20px;
-      margin-top: 40px;
-    }
-  </style>
+/* FAQ */
+.faq {
+  margin-bottom: 15px;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 30px;
+  background: #020617;
+}
+</style>
 </head>
+
 <body>
 
-  <header>
-    <h1>Law for AI</h1>
-    <p>
-      Legal insight for the age of artificial intelligence. Helping businesses, founders, and innovators navigate AI policy, compliance, privacy, and risk.
-    </p>
-    <a href="#contact" class="btn">Book a Consultation</a>
-  </header>
+<header>
+  <h1 class="highlight">Law for AI</h1>
+  <p>Legal expertise for Artificial Intelligence, startups, and future technologies.</p>
+  <a href="#contact" class="btn">Get Legal Help</a>
+</header>
 
-  <nav>
-    <a href="#services">Services</a>
-    <a href="#about">About</a>
-    <a href="#contact">Contact</a>
-  </nav>
+<nav>
+  <a href="#services">Services</a>
+  <a href="#about">About</a>
+  <a href="#testimonials">Testimonials</a>
+  <a href="#faq">FAQ</a>
+  <a href="#contact">Contact</a>
+</nav>
 
-  <section id="services">
-    <h2>Our Services</h2>
-    <div class="grid">
-      <div class="card">
-        <h3>AI Compliance</h3>
-        <p>Guidance on regulations, governance, transparency, and responsible AI practices.</p>
-      </div>
-      <div class="card">
-        <h3>Privacy & Data</h3>
-        <p>Support with data use, privacy frameworks, consent, and risk management for AI systems.</p>
-      </div>
-      <div class="card">
-        <h3>Contracts & Policy</h3>
-        <p>Review of vendor agreements, internal AI policies, and commercial legal protections.</p>
-      </div>
-      <div class="card">
-        <h3>Risk Advisory</h3>
-        <p>Identify legal exposure around bias, liability, intellectual property, and compliance obligations.</p>
-      </div>
+<section id="services">
+  <h2>Services</h2>
+  <div class="grid">
+    <div class="card">
+      <h3>AI Compliance</h3>
+      <p>Navigate global AI regulations and legal frameworks.</p>
     </div>
-  </section>
-
-  <section id="about">
-    <div class="about">
-      <h2>About Law for AI</h2>
-      <p>
-        Law for AI is focused on helping organizations understand and manage the legal challenges created by artificial intelligence.
-        We work with startups, enterprises, and professionals adopting AI tools and building AI-driven products.
-      </p>
+    <div class="card">
+      <h3>Data Privacy</h3>
+      <p>Protect user data and ensure compliance with privacy laws.</p>
     </div>
-  </section>
-
-  <section id="contact">
-    <div class="contact">
-      <h2>Contact</h2>
-      <p>Email: contact@lawforai.com</p>
-      <p>Phone: (555) 123-4567</p>
-      <p>Location: New York, NY</p>
+    <div class="card">
+      <h3>Contracts</h3>
+      <p>AI vendor agreements and licensing strategies.</p>
     </div>
-  </section>
+    <div class="card">
+      <h3>Risk Management</h3>
+      <p>Reduce liability and legal exposure in AI deployment.</p>
+    </div>
+  </div>
+</section>
 
-  <footer>
-    <p>© 2026 Law for AI. All rights reserved.</p>
-  </footer>
+<section id="about">
+  <h2>About</h2>
+  <p>
+    We specialize in the intersection of law and artificial intelligence. 
+    Our mission is to help companies innovate safely while staying compliant.
+  </p>
+</section>
+
+<section id="testimonials">
+  <h2>What Clients Say</h2>
+  <div class="testimonial">
+    "They helped us navigate AI compliance quickly and confidently."
+  </div>
+  <div class="testimonial">
+    "Professional, clear, and extremely knowledgeable about AI law."
+  </div>
+</section>
+
+<section id="faq">
+  <h2>FAQ</h2>
+  <div class="faq">
+    <strong>Do I need AI legal advice?</strong><br/>
+    If your business uses AI, you likely face legal risks.
+  </div>
+  <div class="faq">
+    <strong>Do you work with startups?</strong><br/>
+    Yes, we specialize in startups and fast-growing companies.
+  </div>
+</section>
+
+<section id="contact">
+  <h2>Contact</h2>
+  <p>Email: contact@lawforai.com</p>
+  <p>Phone: (555) 123-4567</p>
+</section>
+
+<footer>
+  <p>© 2026 Law for AI</p>
+</footer>
 
 </body>
 </html>

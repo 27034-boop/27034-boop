@@ -1,177 +1,585 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Law for AI</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Law for AI</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
 
-<style>
-body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  background: #0f172a;
-  color: #e5e7eb;
-}
+    html {
+      scroll-behavior: smooth;
+    }
 
-header {
-  text-align: center;
-  padding: 100px 20px;
-  background: linear-gradient(135deg, #020617, #1e3a8a);
-}
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #0b1120;
+      color: #e5e7eb;
+      line-height: 1.6;
+    }
 
-h1 {
-  font-size: 3rem;
-}
+    header {
+      background: linear-gradient(135deg, #020617, #0f172a 40%, #1d4ed8);
+      padding: 90px 20px 80px;
+      text-align: center;
+    }
 
-h2 {
-  text-align: center;
-  margin-bottom: 20px;
-}
+    header h1 {
+      margin: 0 0 15px;
+      font-size: 3.2rem;
+      color: #f8fafc;
+    }
 
-section {
-  padding: 60px 20px;
-  max-width: 1100px;
-  margin: auto;
-}
+    header p {
+      max-width: 800px;
+      margin: 0 auto 25px;
+      font-size: 1.15rem;
+      color: #cbd5e1;
+    }
 
-.btn {
-  display: inline-block;
-  background: gold;
-  color: black;
-  padding: 12px 25px;
-  border-radius: 8px;
-  text-decoration: none;
-  margin-top: 20px;
-  font-weight: bold;
-}
+    .highlight {
+      color: #fbbf24;
+    }
 
-nav {
-  text-align: center;
-  padding: 15px;
-  background: #020617;
-}
+    .btn {
+      display: inline-block;
+      background: #fbbf24;
+      color: #111827;
+      text-decoration: none;
+      padding: 14px 24px;
+      border-radius: 8px;
+      font-weight: bold;
+      margin: 8px;
+    }
 
-nav a {
-  margin: 0 15px;
-  color: white;
-  text-decoration: none;
-}
+    .btn-secondary {
+      background: transparent;
+      color: #f8fafc;
+      border: 1px solid #94a3b8;
+    }
 
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
-  gap: 20px;
-}
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: #020617;
+      border-bottom: 1px solid #1e293b;
+      padding: 14px 10px;
+      text-align: center;
+    }
 
-.card {
-  background: #111827;
-  padding: 25px;
-  border-radius: 10px;
-}
+    nav a {
+      color: #e5e7eb;
+      text-decoration: none;
+      margin: 0 12px;
+      font-size: 0.95rem;
+      font-weight: bold;
+    }
 
-.highlight {
-  color: gold;
-}
+    nav a:hover {
+      color: #fbbf24;
+    }
 
-/* Testimonials */
-.testimonial {
-  background: #1f2937;
-  padding: 20px;
-  border-left: 4px solid gold;
-  margin-bottom: 20px;
-}
+    section {
+      max-width: 1150px;
+      margin: 0 auto;
+      padding: 70px 20px;
+    }
 
-/* FAQ */
-.faq {
-  margin-bottom: 15px;
-}
+    .section-title {
+      font-size: 2rem;
+      margin-bottom: 12px;
+      color: #f8fafc;
+      text-align: center;
+    }
 
-/* Footer */
-footer {
-  text-align: center;
-  padding: 30px;
-  background: #020617;
-}
-</style>
+    .section-text {
+      max-width: 800px;
+      margin: 0 auto 35px;
+      text-align: center;
+      color: #cbd5e1;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 22px;
+    }
+
+    .card {
+      background: #111827;
+      border: 1px solid #1f2937;
+      border-radius: 14px;
+      padding: 24px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.25);
+    }
+
+    .card h3 {
+      margin-top: 0;
+      color: #fbbf24;
+    }
+
+    .muted {
+      color: #cbd5e1;
+    }
+
+    .split {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 28px;
+      align-items: start;
+    }
+
+    .panel {
+      background: #0f172a;
+      border: 1px solid #1e293b;
+      border-radius: 14px;
+      padding: 28px;
+    }
+
+    .panel h3 {
+      margin-top: 0;
+      color: #f8fafc;
+    }
+
+    ul.checklist {
+      padding-left: 20px;
+      margin: 0;
+    }
+
+    ul.checklist li {
+      margin-bottom: 10px;
+      color: #cbd5e1;
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 18px;
+      margin-top: 30px;
+    }
+
+    .stat {
+      background: #111827;
+      border: 1px solid #1f2937;
+      border-radius: 14px;
+      padding: 22px;
+      text-align: center;
+    }
+
+    .stat h3 {
+      margin: 0;
+      font-size: 2rem;
+      color: #fbbf24;
+    }
+
+    .timeline {
+      display: grid;
+      gap: 18px;
+      margin-top: 25px;
+    }
+
+    .step {
+      background: #111827;
+      border-left: 4px solid #fbbf24;
+      padding: 20px;
+      border-radius: 10px;
+    }
+
+    .step h3 {
+      margin: 0 0 8px;
+      color: #f8fafc;
+    }
+
+    .testimonial {
+      background: #111827;
+      border-left: 4px solid #fbbf24;
+      border-radius: 10px;
+      padding: 22px;
+    }
+
+    .testimonial strong {
+      color: #f8fafc;
+      display: block;
+      margin-top: 12px;
+    }
+
+    .faq-item {
+      background: #111827;
+      border: 1px solid #1f2937;
+      border-radius: 12px;
+      padding: 20px;
+      margin-bottom: 16px;
+    }
+
+    .faq-item h3 {
+      margin: 0 0 10px;
+      color: #fbbf24;
+      font-size: 1.05rem;
+    }
+
+    .contact-box {
+      background: linear-gradient(135deg, #111827, #0f172a);
+      border: 1px solid #334155;
+      border-radius: 16px;
+      padding: 30px;
+      text-align: center;
+    }
+
+    footer {
+      background: #020617;
+      border-top: 1px solid #1e293b;
+      text-align: center;
+      padding: 30px 20px;
+      color: #94a3b8;
+    }
+
+    @media (max-width: 800px) {
+      header h1 {
+        font-size: 2.4rem;
+      }
+
+      .split {
+        grid-template-columns: 1fr;
+      }
+
+      nav a {
+        display: inline-block;
+        margin: 6px 8px;
+      }
+    }
+  </style>
 </head>
-
 <body>
 
-<header>
-  <h1 class="highlight">Law for AI</h1>
-  <p>Legal expertise for Artificial Intelligence, startups, and future technologies.</p>
-  <a href="#contact" class="btn">Get Legal Help</a>
-</header>
+  <header>
+    <h1><span class="highlight">Law for AI</span></h1>
+    <p>
+      Strategic legal guidance for companies building, deploying, investing in, or using artificial intelligence.
+      We help clients manage risk, strengthen compliance, and move faster with confidence in a rapidly changing legal environment.
+    </p>
+    <a href="#contact" class="btn">Schedule a Consultation</a>
+    <a href="#services" class="btn btn-secondary">Explore Services</a>
+  </header>
 
-<nav>
-  <a href="#services">Services</a>
-  <a href="#about">About</a>
-  <a href="#testimonials">Testimonials</a>
-  <a href="#faq">FAQ</a>
-  <a href="#contact">Contact</a>
-</nav>
+  <nav>
+    <a href="#about">About</a>
+    <a href="#services">Services</a>
+    <a href="#industries">Industries</a>
+    <a href="#process">Process</a>
+    <a href="#why-us">Why Us</a>
+    <a href="#faq">FAQ</a>
+    <a href="#contact">Contact</a>
+  </nav>
 
-<section id="services">
-  <h2>Services</h2>
-  <div class="grid">
-    <div class="card">
-      <h3>AI Compliance</h3>
-      <p>Navigate global AI regulations and legal frameworks.</p>
+  <section id="about">
+    <h2 class="section-title">About Law for AI</h2>
+    <p class="section-text">
+      Law for AI is focused on the legal, regulatory, and commercial challenges created by artificial intelligence.
+      We support startups, law firms, investors, and established companies that want to use AI responsibly while protecting
+      their business, customers, data, and intellectual property.
+    </p>
+
+    <div class="split">
+      <div class="panel">
+        <h3>Our Mission</h3>
+        <p class="muted">
+          Our mission is to make AI law understandable, practical, and useful for real businesses. Instead of generic legal advice,
+          we provide focused support on governance, contracts, privacy, compliance, and risk strategy for modern AI systems.
+        </p>
+        <p class="muted">
+          Whether you are launching an AI product, integrating third-party models, or creating internal AI policies for your team,
+          we help you reduce uncertainty and make informed decisions.
+        </p>
+      </div>
+
+      <div class="panel">
+        <h3>Core Focus Areas</h3>
+        <ul class="checklist">
+          <li>AI governance and internal policy frameworks</li>
+          <li>Privacy and data protection obligations</li>
+          <li>Vendor, licensing, and technology contracts</li>
+          <li>Risk reviews for generative AI tools</li>
+          <li>Regulatory readiness and compliance planning</li>
+          <li>Product launch support for AI-enabled services</li>
+        </ul>
+      </div>
     </div>
-    <div class="card">
-      <h3>Data Privacy</h3>
-      <p>Protect user data and ensure compliance with privacy laws.</p>
+
+    <div class="stats">
+      <div class="stat">
+        <h3>AI</h3>
+        <p>Focused legal strategy for emerging technologies</p>
+      </div>
+      <div class="stat">
+        <h3>Risk</h3>
+        <p>Practical guidance on liability, bias, and governance</p>
+      </div>
+      <div class="stat">
+        <h3>Privacy</h3>
+        <p>Data protection and compliant AI usage planning</p>
+      </div>
+      <div class="stat">
+        <h3>Growth</h3>
+        <p>Support for startups, founders, and scaling teams</p>
+      </div>
     </div>
-    <div class="card">
-      <h3>Contracts</h3>
-      <p>AI vendor agreements and licensing strategies.</p>
+  </section>
+
+  <section id="services">
+    <h2 class="section-title">Legal Services</h2>
+    <p class="section-text">
+      We provide tailored support across the full AI lifecycle — from early product design and procurement to launch,
+      governance, dispute prevention, and long-term compliance.
+    </p>
+
+    <div class="grid">
+      <div class="card">
+        <h3>AI Compliance & Governance</h3>
+        <p class="muted">
+          Develop internal rules, review accountability structures, and create governance systems for responsible AI use.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Privacy & Data Protection</h3>
+        <p class="muted">
+          Assess data collection, training data use, customer information handling, and privacy risk in AI workflows.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Commercial Contracts</h3>
+        <p class="muted">
+          Draft and review SaaS agreements, AI vendor contracts, licensing terms, procurement documents, and service terms.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>AI Product Launch Reviews</h3>
+        <p class="muted">
+          Support launch readiness by identifying legal issues involving transparency, use restrictions, output reliability, and disclaimers.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Risk Assessment</h3>
+        <p class="muted">
+          Review legal exposure involving bias, inaccurate outputs, IP disputes, consumer protection, and operational misuse.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Internal AI Policies</h3>
+        <p class="muted">
+          Create employee-facing and executive-facing policies on approved tools, data usage, security, and human oversight.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Intellectual Property Strategy</h3>
+        <p class="muted">
+          Advise on ownership questions, model outputs, training materials, content usage rights, and protection of proprietary systems.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Outside Counsel Support</h3>
+        <p class="muted">
+          Ongoing legal support for founders, in-house teams, and organizations needing flexible AI-focused advisory help.
+        </p>
+      </div>
     </div>
-    <div class="card">
-      <h3>Risk Management</h3>
-      <p>Reduce liability and legal exposure in AI deployment.</p>
+  </section>
+
+  <section id="industries">
+    <h2 class="section-title">Who We Help</h2>
+    <p class="section-text">
+      Our work is designed for organizations navigating AI adoption in high-trust, fast-moving, or regulated environments.
+    </p>
+
+    <div class="grid">
+      <div class="card">
+        <h3>Startups & Founders</h3>
+        <p class="muted">
+          Get practical legal guidance while building and launching AI products under tight timelines.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Enterprise Teams</h3>
+        <p class="muted">
+          Build safer procurement, policy, and governance systems for company-wide AI adoption.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Law Firms & Advisors</h3>
+        <p class="muted">
+          Support complex client matters involving AI governance, technology contracts, and regulatory positioning.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Investors & Operators</h3>
+        <p class="muted">
+          Review legal and operational AI risk across portfolio companies, acquisitions, and growth strategies.
+        </p>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<section id="about">
-  <h2>About</h2>
-  <p>
-    We specialize in the intersection of law and artificial intelligence. 
-    Our mission is to help companies innovate safely while staying compliant.
-  </p>
-</section>
+  <section id="process">
+    <h2 class="section-title">How We Work</h2>
+    <p class="section-text">
+      Our process is built to be clear, efficient, and business-focused so you can understand the legal issues quickly and act with confidence.
+    </p>
 
-<section id="testimonials">
-  <h2>What Clients Say</h2>
-  <div class="testimonial">
-    "They helped us navigate AI compliance quickly and confidently."
-  </div>
-  <div class="testimonial">
-    "Professional, clear, and extremely knowledgeable about AI law."
-  </div>
-</section>
+    <div class="timeline">
+      <div class="step">
+        <h3>1. Discovery</h3>
+        <p class="muted">
+          We learn about your product, operations, goals, and current AI use so we can identify the most important legal issues first.
+        </p>
+      </div>
 
-<section id="faq">
-  <h2>FAQ</h2>
-  <div class="faq">
-    <strong>Do I need AI legal advice?</strong><br/>
-    If your business uses AI, you likely face legal risks.
-  </div>
-  <div class="faq">
-    <strong>Do you work with startups?</strong><br/>
-    Yes, we specialize in startups and fast-growing companies.
-  </div>
-</section>
+      <div class="step">
+        <h3>2. Risk Review</h3>
+        <p class="muted">
+          We analyze contracts, workflows, data practices, governance gaps, and regulatory considerations tied to your use of AI.
+        </p>
+      </div>
 
-<section id="contact">
-  <h2>Contact</h2>
-  <p>Email: contact@lawforai.com</p>
-  <p>Phone: (555) 123-4567</p>
-</section>
+      <div class="step">
+        <h3>3. Practical Recommendations</h3>
+        <p class="muted">
+          You receive direct recommendations, policies, contract edits, and action steps that fit your business and timeline.
+        </p>
+      </div>
 
-<footer>
-  <p>© 2026 Law for AI</p>
-</footer>
+      <div class="step">
+        <h3>4. Ongoing Support</h3>
+        <p class="muted">
+          We can continue supporting implementation, negotiations, internal training, and future compliance updates as your business grows.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section id="why-us">
+    <h2 class="section-title">Why Clients Choose Us</h2>
+    <p class="section-text">
+      We combine legal thinking with a practical understanding of technology, business operations, and real-world AI implementation.
+    </p>
+
+    <div class="grid">
+      <div class="card">
+        <h3>Business-Minded Advice</h3>
+        <p class="muted">
+          We focus on solutions that protect your company without slowing innovation unnecessarily.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Clear Communication</h3>
+        <p class="muted">
+          We explain legal issues in plain language so leaders, product teams, and operators can act quickly.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Modern Technology Focus</h3>
+        <p class="muted">
+          Our work is centered on today’s AI tools, deployment models, vendor relationships, and governance needs.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Flexible Support</h3>
+        <p class="muted">
+          Whether you need one review, a launch assessment, or recurring counsel, we can support the way your team works.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section id="testimonials">
+    <h2 class="section-title">Client Perspective</h2>
+    <p class="section-text">
+      Example testimonial section you can later replace with real client quotes.
+    </p>
+
+    <div class="grid">
+      <div class="testimonial">
+        “Law for AI helped us create policies for internal AI use and gave us a much clearer understanding of vendor risk.”
+        <strong>— Operations Leader, Technology Company</strong>
+      </div>
+
+      <div class="testimonial">
+        “Their advice was practical, fast, and aligned with how our product team actually works.”
+        <strong>— Founder, AI Startup</strong>
+      </div>
+
+      <div class="testimonial">
+        “They translated a complex AI compliance issue into an action plan our executives could actually use.”
+        <strong>— Strategic Advisor, Growth Business</strong>
+      </div>
+    </div>
+  </section>
+
+  <section id="faq">
+    <h2 class="section-title">Frequently Asked Questions</h2>
+
+    <div class="faq-item">
+      <h3>Do I need legal advice if my company only uses third-party AI tools?</h3>
+      <p class="muted">
+        Yes. Even if you do not build your own model, your company can still face legal risk related to privacy, contracts, data handling,
+        output misuse, confidentiality, and customer disclosures.
+      </p>
+    </div>
+
+    <div class="faq-item">
+      <h3>Can you help create an internal AI policy for employees?</h3>
+      <p class="muted">
+        Yes. We can help define which tools are approved, what data may be entered, what review is required, and how oversight should work.
+      </p>
+    </div>
+
+    <div class="faq-item">
+      <h3>Do you work with startups?</h3>
+      <p class="muted">
+        Absolutely. We support founders and emerging companies that need focused guidance without unnecessary complexity.
+      </p>
+    </div>
+
+    <div class="faq-item">
+      <h3>Can you review AI vendor contracts?</h3>
+      <p class="muted">
+        Yes. We review AI vendor terms, procurement agreements, licensing provisions, data use clauses, and risk allocation language.
+      </p>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="contact-box">
+      <h2 class="section-title">Contact Law for AI</h2>
+      <p class="section-text" style="margin-bottom: 20px;">
+        Ready to discuss AI compliance, product risk, governance, or contract support? Reach out to schedule a consultation.
+      </p>
+      <p><strong>Email:</strong> contact@lawforai.com</p>
+      <p><strong>Phone:</strong> (555) 123-4567</p>
+      <p><strong>Location:</strong> New York, NY</p>
+      <p><strong>Availability:</strong> Consultations by appointment</p>
+      <a href="mailto:contact@lawforai.com" class="btn">Email Us</a>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2026 Law for AI. All rights reserved.</p>
+  </footer>
 
 </body>
 </html>
